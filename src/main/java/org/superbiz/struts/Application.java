@@ -43,12 +43,7 @@ public class Application {
         registration.setUrlPatterns(
                 asList(
                         "/decorators/layout.jsp",
-                        "/addUser.action",
                         "/addedUser.jsp",
-                        "/findUser.action",
-                        "/findUser.jsp",
-                        "/findUserForm.action",
-                        "/findUserForm.jsp",
                         "/listAllUsers.action",
                         "/listAllUsers.jsp"
                 )
