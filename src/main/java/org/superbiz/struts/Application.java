@@ -10,6 +10,7 @@ import org.springframework.context.annotation.Bean;
 
 import javax.servlet.Filter;
 
+import static java.util.Arrays.asList;
 import static java.util.Collections.singletonList;
 
 @SpringBootApplication
@@ -39,7 +40,19 @@ public class Application {
     private FilterRegistrationBean buildFilterRegistration(int order, Filter filter) {
         FilterRegistrationBean registration = new FilterRegistrationBean();
         registration.setFilter(filter);
-        registration.setUrlPatterns(singletonList("/*"));
+        registration.setUrlPatterns(
+                asList(
+                        "/decorators/layout.jsp",
+                        "/addUser.action",
+                        "/addedUser.jsp",
+                        "/findUser.action",
+                        "/findUser.jsp",
+                        "/findUserForm.action",
+                        "/findUserForm.jsp",
+                        "/listAllUsers.action",
+                        "/listAllUsers.jsp"
+                )
+        );
         registration.setOrder(order);
         return registration;
     }
